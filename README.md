@@ -68,7 +68,7 @@ Two datasets were used in sequence for vehicle detection model training:
 |---|---|
 | Source | Aggregated from open-source vehicle detection datasets on Kaggle |
 | Images | ~6,000 images |
-| Purpose | Initial fine-tuning cycle — domain adaptation from ImageNet weights to vehicle detection |
+| Purpose | Initial fine-tuning cycle domain adaptation from ImageNet weights to vehicle detection |
 | Vehicle classes | Car, bus, bike, truck, auto |
 | Notes | Used as first-cycle fine-tuning before domain-specific IISc dataset |
 
@@ -86,21 +86,21 @@ Two datasets were used in sequence for vehicle detection model training:
 | Training and Validation split used | ~21,000 images |
 | Test split used | ~5,000 images |
 | Viewpoint | Elevated CCTV / top-view, closely matching deployment camera placement |
-| Conditions | Daytime, evening, nighttime — multi-illumination |
+| Conditions | Daytime, evening, nighttime multi-illumination |
 | Traffic density | Dense, congested, multi-vehicle scenes with partial occlusion and overlap |
 
 **Preprocessing applied to UVH-26:**
 - Original RGB images converted to grayscale to match the monochrome
   output of the deployment camera
 - Grayscale images replicated into 3 identical channels to satisfy
-  YOLO's 3-channel input requirement
+  YOLO's 3 channel input requirement
 - This preprocessing ensures training data characteristics closely
   match the target deployment environment
 
 **Rationale for UVH-26 selection:**
 The UVH-26 dataset was selected specifically because its elevated
 CCTV viewpoint, dense multi-vehicle scenes, partial occlusions, and
-multi-illumination conditions directly mirror the deployment setup —
+multi-illumination conditions directly mirror the deployment setup
 unlike standard vehicle detection datasets captured from dashcam or
 street-level perspectives, which exhibit significantly different
 vehicle scale distributions and viewpoint geometry.
@@ -111,7 +111,7 @@ vehicle scale distributions and viewpoint geometry.
 
 | Property | Detail |
 |---|---|
-| Source | Custom dataset — built through combination of multiple open source datasets |
+| Source | Custom dataset built through combination of multiple open source datasets |
 | Total images | 12000 |
 | Plate formats | Single-line HSRP, dual-line HSRP, legacy pre-HSRP, commercial (yellow bg), two-wheeler |
 | Vehicle classes | Private cars, commercial trucks, buses, auto-rickshaws, motorcycles, tractors |
@@ -140,7 +140,7 @@ vehicle scale distributions and viewpoint geometry.
 
 > **Note on model selection and deployment:**
 > YOLOv8n achieves the highest mAP@0.5-95 on the plate detection stage,
-> indicating tighter bounding box localization — which directly impacts
+> indicating tighter bounding box localization which directly impacts
 > OCR crop quality. All three architectures were evaluated for detection
 > accuracy in PyTorch. **YOLOv8n is selected as the deployed
 > configuration** as it achieved the best localization precision and
@@ -169,15 +169,15 @@ vehicle scale distributions and viewpoint geometry.
 
 ### Selected Backend: PaddleOCR PP-OCRv4
 
-PaddleOCR's 2D attention-based architecture handles both single-line
-and dual-line plate formats without requiring per-format model routing,
+PaddleOCR's 2D attention-based architecture handles both single line
+and dual-line plate formats without requiring per format model routing,
 outperforming LPRNet and EasyOCR across both formats on the Indian
 plate test set.
 
 **Why LPRNet cannot natively handle dual-line plates:**
 LPRNet uses a CTC (Connectionist Temporal Classification) decoder
 that treats the entire input as a single left-to-right character
-sequence. It has no concept of row structure. Feeding a dual-line
+sequence. It has no concept of row structure. Feeding a dual line
 HSRP plate to LPRNet produces garbled output regardless of resolution,
 because the CTC alignment conflates characters from both rows into
 a single disordered sequence. LPRNet requires the dual-line
@@ -186,10 +186,10 @@ handles both formats directly.
 
 ### Dual-Line Plate Segmentation Algorithm
 
-For dual-line HSRP plates, a geometric segmentation step is applied
+For dual line HSRP plates, a geometric segmentation step is applied
 before OCR:
 This approach ensures correct character reading order, which purely
-positional OCR fails to guarantee for dual-line inputs.
+positional OCR fails to guarantee for dual line inputs.
 
 ---
 
@@ -231,7 +231,7 @@ By associating detections with persistent track IDs, the system stores only one 
 
 | Component | Specification |
 |---|---|
-| Single-board computer | Raspberry Pi 5 (4-core ARM Cortex-A76 @ 2.4 GHz, 8 GB LPDDR4X) |
+| Single-board computer | Raspberry Pi 5 (4 core ARM Cortex-A76 @ 2.4 GHz, 8 GB LPDDR4X) |
 | AI accelerator | Hailo-8 NPU via Raspberry Pi AI HAT (26 TOPS INT8) |
 | Camera | Raspberry Pi Camera HQ Module (Sony IMX477, 12.3 MP, 1080p30) |
 | Adaptor | Raspberry Pi 5V-5A Power Adaptor |
