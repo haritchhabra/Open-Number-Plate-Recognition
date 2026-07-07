@@ -58,11 +58,11 @@ lowest-cost real-time ANPR deployments documented for Indian traffic.
 | # | Contribution | Status |
 |---|---|---|
 | 1 | Large-scale multi-state Indian plate dataset (single-line + dual-line HSRP, legacy, commercial, two-wheeler) | Pending release |
-| 2 | Two-stage detection pipeline: vehicle detection (IISc UVH-26 + custom Kaggle dataset) → plate localization (custom Indian plate dataset) | ✅ Complete |
-| 3 | Systematic comparison of YOLOv8n, YOLOv11n, YOLOv26n  | ✅ Complete |
-| 4 | Multi-OCR benchmarking: LPRNet, PaddleOCR, EasyOCR on single-line and dual-line Indian plates | ✅ Complete |
-| 5 | Modified SORT tracker with adaptive-noise Kalman model and class-conditional association for dense Indian mixed traffic | ✅ Complete |
-| 6 | Real-time Hailo-8 NPU deployment at 30 FPS on sub $50 hardware (₹48000) | ✅ Complete |
+| 2 | Two-stage detection pipeline: vehicle detection (IISc UVH-26 + custom Kaggle dataset) → plate localization (custom Indian plate dataset) | Complete |
+| 3 | Systematic comparison of YOLOv8n, YOLOv11n, YOLOv26n  | Complete |
+| 4 | Multi-OCR benchmarking: LPRNet, PaddleOCR, EasyOCR on single-line and dual-line Indian plates | Complete |
+| 5 | Modified SORT tracker with adaptive-noise Kalman model and class-conditional association for dense Indian mixed traffic | Complete |
+| 6 | Real-time Hailo-8 NPU deployment at 30 FPS on sub $50 hardware (₹48000) | Complete |
 
 ---
 
@@ -97,7 +97,7 @@ Two datasets were used in sequence for vehicle detection model training:
 | Images | 26,646 HD images at 1920 × 1080 resolution |
 | Bounding box annotations | ~1.8 million |
 | Vehicle categories | 14 classes: hatchbacks, sedans, SUVs, buses, trucks, two-wheelers, three-wheelers, bicycles, light commercial vehicles, and others |
-| Mapped 14 vehicle classes to 5 classes and removed classes[bicycles,others]|
+| Mapped 14 vehicle classes to 5 classes |14 → 5 class mapping (car, bus, truck, motorcycle, auto rickshaw); bicycles and "others" excluded |
 | Camera source | ~2,800 Bengaluru Safe City CCTV cameras |
 | Training and Validation split used | ~21,000 images |
 | Test split used | ~5,000 images |
