@@ -11,15 +11,13 @@
   <img src="demo/demo.gif" width="900">
 </p>
 
-## Table of Contents
+# Table of Contents
 - [Overview](#overview)
 - [Key Contributions](#key-contributions)
 - [Datasets](#datasets)
 - [Models](#models)
 - [OCR Pipeline](#ocr-pipeline)
 - [Edge Deployment](#edge-deployment)
-
--
 
 ## Overview
 
