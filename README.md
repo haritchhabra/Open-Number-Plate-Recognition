@@ -14,17 +14,10 @@
 ## Table of Contents
 - [Overview](#overview)
 - [Key Contributions](#key-contributions)
-- [System Architecture](#system-architecture)
 - [Datasets](#datasets)
 - [Models](#models)
 - [OCR Pipeline](#ocr-pipeline)
-- [Vehicle Tracking](#vehicle-tracking)
 - [Edge Deployment](#edge-deployment)
-- [Results](#results)
-- [Demo](#demo)
-- [Citation](#citation)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
 
 ---
 
@@ -64,13 +57,6 @@ lowest-cost real-time ANPR deployments documented for Indian traffic.
 | 5 | Modified SORT tracker with adaptive-noise Kalman model and class-conditional association for dense Indian mixed traffic | Complete |
 | 6 | Real-time Hailo-8 NPU deployment at 30 FPS on sub $50 hardware (₹48000) | Complete |
 
----
-
-
-## System Architecture
-
-
----
 
 ## Datasets
 
@@ -171,14 +157,6 @@ vehicle scale distributions and viewpoint geometry.
 
 ## OCR Pipeline
 
-### Backend Comparison
-
-Three OCR backends were benchmarked on the full Indian plate test set:
-
-| OCR Backend | Fine-tuned | Single-line CER (%) | Single-line PLA (%) | Dual-line CER (%) | Dual-line PLA (%) | Latency GPU (ms/crop) | Latency Hailo (ms/crop) |
-|---|---|---|---|---|---|---|---|
-## OCR Backend Comparison
-
 | Feature | LPRNet | PaddleOCR (PP OCRv4) | EasyOCR |
 |---------|---------|----------------------|----------|
 | **Primary Purpose** | Dedicated License Plate Recognition | General OCR Framework | General OCR Framework |
@@ -217,8 +195,6 @@ positional OCR fails to guarantee for dual-line inputs.
 
 ---
 
-## Vehicle Tracking
-## Vehicle Tracking
 
 ## Vehicle Tracking Results
 
@@ -236,6 +212,7 @@ This strategy ensures stable vehicle tracking while significantly reducing dupli
 Without vehicle tracking, the detector repeatedly captures the same vehicle across multiple frames, resulting in a large number of duplicate plate crops and increased OCR latency.
 
 By associating detections with persistent track IDs, the system stores only one or a few representative plate crops per vehicle, dramatically reducing storage requirements and computational overhead.
+
 
 | Scenario | Number of Plate Crops | Total OCR Time |
 |-----------|----------------------:|---------------:|
@@ -287,17 +264,18 @@ Performance evaluation was conducted by processing recorded videos frame by fram
 
 | Stage | Accelerator | Average Time (ms) |
 |---|---|---:|
+| Vehicle Detection | Hailo 8 NPU | 8 |
+| Plate Detection | Hailo 8 NPU | 8 |
+| Plate Preprocessing | CPU | 3 |
+| OCR* | Hailo 8 NPU | 8 |
+| CPU Processing | Cortex A76 | 6 |
+| **Average Time per Frame** |  | **33** |
 
-| Vehicle Detection | Hailo 8 NPU | 8ms | 
-| Plate Detection | Hailo 8 NPU | 8ms |
-| Plate Preprocessing | CPU | 3ms |
-| OCR | Hailo 8 NPU | 8ms | (averaged for 2 frames out of 10)
-| CPU Processing | Cortex A76 | 6ms |
-| **Average Time per Frame** | | 33ms |
+\* OCR time is averaged over **2 processed frames out of every 10 frames**, as OCR is not executed on every frame.
 
 > These timings were measured during offline inference on recorded videos and should not be interpreted as real time streaming performance.
 
-**Sustained throughput: 30 FPS**
+**Average processing throughput: ~30 processed frames/s (offline inference)**
 
 Pipeline stages are overlapped using a double-buffering scheme
 to minimize inter-stage latency. The dual-line segmentation step
