@@ -235,7 +235,7 @@ By associating detections with persistent track IDs, the system stores only one 
 | AI accelerator | Hailo-8 NPU via Raspberry Pi AI HAT (26 TOPS INT8) |
 | Camera | Raspberry Pi Camera HQ Module (Sony IMX477, 12.3 MP, 1080p30) |
 | Adaptor | Raspberry Pi 5V-5A Power Adaptor |
-| Casing for the device | 3d Printed |
+| Camera Lens | 16mm 10MP Telephoto Lens Suitable for HQ Camera Module |
 | Approximate total cost | ~$50 USD |
 
 ### Model Compilation
