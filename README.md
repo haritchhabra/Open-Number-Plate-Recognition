@@ -1,13 +1,15 @@
 # Real-Time Indian License Plate Recognition (ANPR)
 ### Edge AI Deployment on Raspberry Pi 5 + Hailo-8 NPU
 
-> ⚠️ **Repository Status: Private**
+>  **Repository Status: Private**
 > All source code in this repository is private and restricted from
 > public access pending publication. The repository will be made
 > fully open-source upon acceptance of the associated research paper.
 > Dataset and model weights will be released alongside publication.
 
----
+<p align="center">
+  <img src="demo/demo.gif" width="900">
+</p>
 
 ## Table of Contents
 - [Overview](#overview)
