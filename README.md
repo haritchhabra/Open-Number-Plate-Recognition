@@ -282,5 +282,5 @@ contributing negligible additional latency.
 ```bibtex
 
 
-*For enquiries, contact: haritchhabra93@gmail.com, pratikchouragadey26@gmail.com *
+For enquiries, contact: haritchhabra93@gmail.com, pratikchouragadey26@gmail.com 
 
