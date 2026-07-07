@@ -148,9 +148,9 @@ vehicle scale distributions and viewpoint geometry.
 
 | Stage | Model | Val mAP@0.5 | Val mAP@0.5-95 | Test mAP@0.5 | Test mAP@0.5-95 | Params (M) |
 |---|---|---|---|---|---|---|
-| Vehicle  | YOLOv8n | 98.9 | 92.5 | — | — | 3.16 |  (Test mAP values yet to be calculated)
-| Vehicle  | YOLOv11n | 99.1 | 92.6 | — | — | 2.62 |
-| Vehicle  | YOLOv26n | 98.9 | 93.5 | — | — | 2.40 |
+| Vehicle  | YOLOv8n | 98.9 | 92.5 | yet to be tested | yet to be tested | 3.16 |  (Test mAP values yet to be calculated)
+| Vehicle  | YOLOv11n | 99.1 | 92.6 | yet to be tested | yet to be tested | 2.62 |
+| Vehicle  | YOLOv26n | 98.9 | 93.5 | yet to be tested | yet to be tested | 2.40 |
 | Plate  | YOLOv8n | 99.3 | 85.3 | 95.0 | 84.0 | 3.16 |
 | Plate  | YOLOv11n | 99.3 | 84.8 | 93.0 | 78.0 | 2.62 |
 | Plate  | YOLOv26n | 99.2 | 85.1 | 92.0 | 72.0 | 2.40 |
