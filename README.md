@@ -19,13 +19,13 @@
 - [OCR Pipeline](#ocr-pipeline)
 - [Edge Deployment](#edge-deployment)
 
----
+-
 
 ## Overview
 
 This repository contains the implementation of a real-time Automatic
 Number Plate Recognition (ANPR) system specifically designed for
-**Indian license plates** — a problem space largely unaddressed by
+**Indian license plates** a problem space largely unaddressed by
 existing open-source ANPR solutions.
 
 Indian license plates present unique challenges that international
@@ -33,7 +33,7 @@ systems fail to handle:
 
 - **Dual-line HSRP format** — state code and serial number on
   separate rows, requiring explicit line segmentation before OCR
-- **Legacy pre-HSRP plates** — hand-painted, non-uniform fonts,
+- **Older plates** — hand-painted, non-uniform fonts,
   inconsistent character spacing
 - **Extreme environmental conditions** — monsoon glare, nighttime
   low-sodium lighting, dust occlusion, motion blur
@@ -44,7 +44,7 @@ The complete pipeline runs at **30 FPS end-to-end** on a
 **Raspberry Pi 5 + Hailo-8 NPU (AI HAT)**, making it one of the
 lowest-cost real-time ANPR deployments documented for Indian traffic.
 
----
+-
 
 ## Key Contributions
 
@@ -60,7 +60,7 @@ lowest-cost real-time ANPR deployments documented for Indian traffic.
 
 ## Datasets
 
-### Stage 1 — Vehicle Detection
+### Stage 1 Vehicle Detection
 
 Two datasets were used in sequence for vehicle detection model training:
 
@@ -74,7 +74,7 @@ Two datasets were used in sequence for vehicle detection model training:
 | Vehicle classes | Car, bus, bike, truck, auto |
 | Notes | Used as first-cycle fine-tuning before domain-specific IISc dataset |
 
-#### 2. IISc UVH-26 — Urban Vision Hackathon Dataset (Primary Training)
+#### 2. IISc UVH-26 Urban Vision Hackathon Dataset (Primary Training)
 
 | Property | Detail |
 |---|---|
@@ -109,7 +109,7 @@ vehicle scale distributions and viewpoint geometry.
 
 ---
 
-### Stage 2 — License Plate Detection
+### Stage 2 License Plate Detection
 
 | Property | Detail |
 |---|---|
@@ -129,7 +129,7 @@ vehicle scale distributions and viewpoint geometry.
 
 ## Models
 
-### Detection Performance — Stage 1 (Vehicle) and Stage 2 (Plate)
+### Detection Performance Stage 1 (Vehicle) and Stage 2 (Plate)
 
 | Stage | Model | Val mAP@0.5 | Val mAP@0.5-95 | Test mAP@0.5 | Test mAP@0.5-95 | Params (M) |
 |---|---|---|---|---|---|---|
