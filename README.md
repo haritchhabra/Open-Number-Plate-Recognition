@@ -42,7 +42,6 @@ The complete pipeline runs at **30 FPS end-to-end** on a
 **Raspberry Pi 5 + Hailo-8 NPU (AI HAT)**, making it one of the
 lowest-cost real-time ANPR deployments documented for Indian traffic.
 
--
 
 ## Key Contributions
 
@@ -283,5 +282,5 @@ contributing negligible additional latency.
 ```bibtex
 
 
-*For enquiries, contact: haritchhabra93@gmail.com*
+*For enquiries, contact: haritchhabra93@gmail.com, pratikchouragadey26@gmail.com *
 
