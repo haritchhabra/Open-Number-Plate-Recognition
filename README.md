@@ -53,7 +53,7 @@ lowest-cost real-time ANPR deployments documented for Indian traffic.
 | 3 | Systematic comparison of YOLOv8n, YOLOv11n, YOLOv26n  | Complete |
 | 4 | Multi-OCR benchmarking: LPRNet, PaddleOCR, EasyOCR on single-line and dual-line Indian plates | Complete |
 | 5 | Modified SORT tracker with adaptive-noise Kalman model and class-conditional association for dense Indian mixed traffic | Complete |
-| 6 | Real-time Hailo-8 NPU deployment at 30 FPS on sub $50 hardware (₹48000) | Complete |
+| 6 | Real-time Hailo-8 NPU deployment at 30 FPS on sub $500 hardware (₹48000) | Complete |
 
 
 ## Datasets
@@ -236,7 +236,7 @@ By associating detections with persistent track IDs, the system stores only one 
 | Camera | Raspberry Pi Camera HQ Module (Sony IMX477, 12.3 MP, 1080p30) |
 | Adaptor | Raspberry Pi 5V-5A Power Adaptor |
 | Camera Lens | 16mm 10MP Telephoto Lens Suitable for HQ Camera Module |
-| Approximate total cost | ~$50 USD |
+| Approximate total cost | ~$500 USD |
 
 ### Model Compilation
 
