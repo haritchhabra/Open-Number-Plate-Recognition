@@ -127,10 +127,9 @@ vehicle scale distributions and viewpoint geometry.
 
 | Property | Detail |
 |---|---|
-| Source | Custom dataset — collected across multiple Indian states |
-| Total images | [ to be filled ] |
+| Source | Custom dataset — built through combination of multiple open source datasets |
+| Total images | 12000 |
 | Plate formats | Single-line HSRP, dual-line HSRP, legacy pre-HSRP, commercial (yellow bg), two-wheeler |
-| States covered | [ to be filled ] |
 | Vehicle classes | Private cars, commercial trucks, buses, auto-rickshaws, motorcycles, tractors |
 | Conditions | Daytime, nighttime, dusk, monsoon glare, dust, motion blur |
 | Degradation levels | Clean, moderate occlusion, severe occlusion (>30%), hand-painted legacy |
