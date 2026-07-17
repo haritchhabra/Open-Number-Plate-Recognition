@@ -11,7 +11,7 @@
   <img src="demo/demo.gif" width="450">
 </p>
 <p align="right">
-  <img src="demo/demo.gif" width="450">
+  <img src="demo/outputf3.gif" width="450">
 </p>
 
 # Table of Contents
