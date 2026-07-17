@@ -7,8 +7,11 @@
 > fully open-source upon acceptance of the associated research paper.
 > Dataset and model weights will be released alongside publication.
 
-<p align="center">
-  <img src="demo/demo.gif" width="900">
+<p align="left">
+  <img src="demo/demo.gif" width="450">
+</p>
+<p align="right">
+  <img src="demo/demo.gif" width="450">
 </p>
 
 # Table of Contents
