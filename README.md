@@ -29,14 +29,13 @@ existing open-source ANPR solutions.
 Indian license plates present unique challenges that international
 systems fail to handle:
 
-- **Dual-line HSRP format** — state code and serial number on
-  separate rows, requiring explicit line segmentation before OCR
-- **Older plates** — hand-painted, non-uniform fonts,
-  inconsistent character spacing
-- **Extreme environmental conditions** — monsoon glare, nighttime
-  low-sodium lighting, dust occlusion, motion blur
-- **Heterogeneous vehicle mix** — cars, trucks, two-wheelers,
-  auto-rickshaws, tractors, each with different plate conventions
+- **Standard HSRP format**
+- **Older plates** - hand-painted, non-uniform fonts
+- **Extreme environmental conditions** - monsoon glare, night-time
+  poor lighting, dust, motion blur
+- **Heterogeneous vehicle mix** - cars, trucks, two-wheelers,
+  auto-rickshaws, tractors, each with different plate dimensions
+  
 
 The complete pipeline runs at **30 FPS end-to-end** on a
 **Raspberry Pi 5 + Hailo-8 NPU (AI HAT)**, making it one of the
